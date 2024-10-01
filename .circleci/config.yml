@@ -19,6 +19,15 @@ jobs:
           fingerprints:
             - '${SSH_KINTANA_FINGERPRINT}'
       - run:
+          name: Display Environment Variables
+          command: |
+            echo "Username: $SSH_KINTANA_USERNAME"
+            echo "Host: $SSH_KINTANA_HOST"
+      - run:
+          name: Test SSH Connection
+          command: |
+            ssh -o StrictHostKeyChecking=no -vvv $SSH_KINTANA_USERNAME@$SSH_KINTANA_HOST 'echo "Connection successful"'
+      - run:
           name: Deploy
           command: |
             ssh -o StrictHostKeyChecking=no -vvv $SSH_KINTANA_USERNAME@$SSH_KINTANA_HOST 'bash -s' < bash/deploy.sh
