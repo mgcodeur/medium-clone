@@ -14,6 +14,7 @@ echo "Installing npm dependencies..."
 npm install
 
 echo "Building the application..."
-npm run build
+npm run build:css
+npm run build:js
 
 echo "Deployment completed successfully."
