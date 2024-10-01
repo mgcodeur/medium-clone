@@ -25,4 +25,4 @@ jobs:
           host: ${{ secrets.SSH_KINTANA_HOST }}
           username: ${{ secrets.SSH_KINTANA_USERNAME }}
           password: ${{ secrets.SSH_KINTANA_PASSWORD }}
-          script: bash/deploy.sh
+          script: ./bash/deploy.sh
