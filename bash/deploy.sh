@@ -14,7 +14,9 @@ echo "Installing npm dependencies..."
 npm install
 
 echo "Building the application..."
-npm run build:css
-npm run build:js
+nohup npm run build:css > /dev/null 2>&1 &
+nohup npm run build:js > /dev/null 2>&1 &
+
+echo "Remove server cache..."
 
 echo "Deployment completed successfully."
