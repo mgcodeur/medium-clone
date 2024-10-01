@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "tailwindcss -i ./src/assets/css/app.css -o ./src/dist/css/app.min.css --watch",
+    "build": "vite build --mode production && tailwindcss -i ./src/assets/css/app.css -o ./src/dist/css/app.min.css --minify",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13",
+    "vite": "^5.4.8"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47"
+  }
+}

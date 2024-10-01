@@ -1,0 +1,33 @@
+version: 2.1
+
+executors:
+  ubuntu-executor:
+    docker:
+      - image: circleci/python:3.8
+
+jobs:
+  build:
+    executor: ubuntu-executor
+    steps:
+      - checkout
+
+  deploy:
+    executor: ubuntu-executor
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - '${SSH_KINTANA_FINGERPRINT}'
+      - run:
+          name: Deploy
+          command: |
+            ssh -o StrictHostKeyChecking=no $SSH_KINTANA_USERNAME@$SSH_KINTANA_HOST 'bash -s' < bash/deploy.sh
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
