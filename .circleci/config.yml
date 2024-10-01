@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            ssh -o StrictHostKeyChecking=no $SSH_KINTANA_USERNAME@$SSH_KINTANA_HOST 'bash -s' < bash/deploy.sh
+            ssh -o StrictHostKeyChecking=no -vvv $SSH_KINTANA_USERNAME@$SSH_KINTANA_HOST 'bash -s' < bash/deploy.sh
 
 workflows:
   version: 2
