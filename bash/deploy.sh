@@ -1,7 +1,4 @@
 #!/bin/bash
-
-set -euo pipefail
-
 echo "Starting deployment..."
 
 echo "Navigating to ~/domains/write.kintana-technology.com/public_html/..."
