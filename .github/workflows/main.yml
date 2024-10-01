@@ -25,4 +25,6 @@ jobs:
           host: ${{ secrets.SSH_KINTANA_HOST }}
           username: ${{ secrets.SSH_KINTANA_USERNAME }}
           password: ${{ secrets.SSH_KINTANA_PASSWORD }}
-          script: sh bash/deploy.sh
+          script: |
+            cd /home/kintanat/domains/write.kintana-technology.com/public_html
+            ./bash/deploy.sh

@@ -1,10 +1,6 @@
 #!/bin/bash
 echo "Starting deployment..."
 
-echo "Navigating to ~/domains/write.kintana-technology.com/public_html/..."
-cd ~/domains/write.kintana-technology.com/public_html/
-
-# Ensure you are on the correct branch
 echo "Fetching latest changes from origin..."
 git fetch origin
 
