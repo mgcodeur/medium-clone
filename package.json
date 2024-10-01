@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "dev": "tailwindcss -i ./src/assets/css/app.css -o ./src/dist/css/app.min.css --watch",
-    "build": "vite build --mode production && tailwindcss -i ./src/assets/css/app.css -o ./src/dist/css/app.min.css --minify",
+    "dev": "tailwindcss -i ./assets/css/app.css -o ./dist/css/app.min.css --watch",
+    "build": "tailwindcss -i ./assets/css/app.css -o ./dist/css/app.min.css --minify && vite build --mode production",
     "watch": "vite build --watch"
   },
   "devDependencies": {
