@@ -21,6 +21,8 @@ jobs:
       - run:
           name: Display Environment Variables
           command: |
+            echo "Listing all environment variables:"
+            printenv  
             echo "Username: $SSH_KINTANA_USERNAME"
             echo "Host: $SSH_KINTANA_HOST"
       - run:
