@@ -13,13 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- application style -->
-    <link rel="stylesheet" href="dist/css/app.min.css?v=009" type="text/css" />
+    <link rel="stylesheet" href="dist/css/app.min.css?v=010" type="text/css" />
 
     <!-- head scripts -->
-    <script src="assets/js/theme-init.js?v=009"></script>
+    <script src="assets/js/theme-init.js?v=010"></script>
 </head>
 <body class="dark:bg-slate-950 dark:text-slate-100">
-    <div class="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+    <div class="absolute z-30 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
         <div class="w-[108rem] flex-none flex justify-end">
             <!-- <picture>
                 <source srcset="assets/images/background/body-light.avif" type="image/avif">
@@ -352,7 +352,7 @@
 
         <div class="col-span-3 lg:col-span-2 px-7">
             <!-- categories list -->
-            <nav class="[&>*]:text-sm relative max-w-full border-b border-slate-200 dark:border-slate-800">
+            <nav class="[&>*]:text-sm relative max-w-full border-b border-slate-200 dark:border-slate-800 sticky top-0 z-20 bg-white dark:bg-slate-950">
                 <!-- prev -->
                 <button
                   href="#"
@@ -930,11 +930,165 @@
                         </div>
                     </div>
                 </article>
+                
+                <!-- post -->
+                <article class="pt-12 pb-5 border-b border-slate-200 border-solid dark:border-slate-800">
+                    <div class="relative">
+                        <div class="flex items-center mb-4">
+                            <a href="#" class="z-10">
+                                <img
+                                    src="assets/images/avatars/me.jpg"
+                                    alt="Author Mgcodeur" 
+                                    class="w-5 h-5 rounded-full me-2"
+                                />
+                            </a>
+
+                            <div class="text-sm z-10">
+                                <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
+                                <span class="dark:text-slate-300">in</span>
+                                <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Mgcodeur Team</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 sm:gap-14 items-start font-normal mb-2 flex-col sm:flex-row">
+                            <div class="order-last sm:order-first">
+                                <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+                                    <a href="#" class="before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0">It Happened on Medium: August 2024 roundup</a>
+                                </h2>
+        
+                                <p class="mb-6">
+                                    Most-shared stories, first-person perspectives, and Boosted stories from new writers
+                                </p>
+
+
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center gap-4 text-sm">
+                                        <span class="text-yellow-400">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 stroke-1">
+                                                <path fill-rule="evenodd" d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z" clip-rule="evenodd" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>Sep 5</span>
+                                        <span class="flex gap-1 items-center">
+                                            <span>
+                                                <svg
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                  viewBox="0 0 24 24"
+                                                  fill="currentColor"
+                                                  class="size-4 stroke-1"
+                                                >
+                                                    <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                                                </svg>
+                                            </span>
+                                            
+                                            <span>7k</span>
+                                        </span>
+                                        <span class="flex gap-1 items-center">
+                                            <span>
+                                                <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                                class="size-4 stroke-1"
+                                                >
+                                                    <path fill-rule="evenodd" d="M5.337 21.718a6.707 6.707 0 0 1-.533-.074.75.75 0 0 1-.44-1.223 3.73 3.73 0 0 0 .814-1.686c.023-.115-.022-.317-.254-.543C3.274 16.587 2.25 14.41 2.25 12c0-5.03 4.428-9 9.75-9s9.75 3.97 9.75 9c0 5.03-4.428 9-9.75 9-.833 0-1.643-.097-2.417-.279a6.721 6.721 0 0 1-4.246.997Z" clip-rule="evenodd" />
+                                                </svg>                                          
+                                            </span>
+                                            <span>121</span>
+                                        </span>
+                                    </div>
+
+                                    <div class="flex z-10">
+                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100">
+                                            <svg
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              fill="none"
+                                              viewBox="0 0 24 24"
+                                              stroke-width="1.5"
+                                              stroke="currentColor"
+                                              class="size-5"
+                                            >
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </a>
+
+                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100">
+                                            <svg
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              fill="none"
+                                              viewBox="0 0 24 24"
+                                              stroke-width="1.5"
+                                              stroke="currentColor"
+                                              class="size-5"
+                                            >
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                            </svg>
+                                        </a>
+
+                                        <div x-data="{ open: false }" class="relative">
+                                            <a
+                                                href="#"
+                                                class="hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100"
+                                                x-on:click.prevent="open = !open"
+                                            >
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke-width="2"
+                                                    stroke="currentColor"
+                                                    class="size-5"
+                                                >
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                                </svg>
+                                
+                                                <ul
+                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-4 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
+                                                    x-on:click.away="open = false"
+                                                    x-show="open"
+                                                    x-cloak
+                                                    x-transition:enter="transition ease-out duration-100"
+                                                    x-transition:enter-start="opacity-0"
+                                                    x-transition:enter-end="opacity-100"
+                                                    x-transition:leave="transition ease-in duration-150"
+                                                    x-transition:leave-start="opacity-100"
+                                                    x-transition:leave-end="opacity-0"
+                                                >
+                                                    <li>
+                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
+                                                            Follow author
+                                                        </a>
+                                                    </li>
+
+                                                    <hr class="my-4 border-slate-200 dark:border-slate-700">
+
+                                                    <li>
+                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
+                                                            Mute author
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="flex items-center px-6 py-2 text-red-500 hover:text-red-700 dark:hover:text-red-500 dark:hover:bg-slate-800">
+                                                            Report story
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full order-first sm:order-last sm:w-auto flex justify-center sm:justify-start">
+                                <img src="assets/images/posts/01.webp" alt="Post 01 Thumbnail" class="w-full sm:w-40">
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </main>
         </div>
 
         <!-- aside -->
-        <aside class="hidden lg:block pe-6 ps-10 border-l border-slate-200 dark:border-slate-800 z-40 sticky">
+        <aside class="hidden lg:block pe-6 ps-10 border-l border-slate-200 dark:border-slate-800 z-40">
             <div class="pt-12">
                 <h2 class="fs-sm text-slate-900 dark:text-slate-100 font-medium">Staff Picks</h2>
             </div>
@@ -942,8 +1096,8 @@
     </section>
 
     <!-- vendors -->
-    <script defer src="assets/vendors/js/alpinejs.min.js?v=009"></script>
+    <script defer src="assets/vendors/js/alpinejs.min.js?v=010"></script>
     <!-- application scripts -->
-    <script src="dist/js/app.min.js?v=009"></script>
+    <script src="dist/js/app.min.js?v=010"></script>
 </body>
 </html>
