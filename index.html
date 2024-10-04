@@ -4,7 +4,6 @@
   x-data="{ theme: localStorage.getItem('theme') || 'system' }" 
   x-init="$watch('theme', value => localStorage.setItem('theme', value))" 
   :data-theme="theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'"
-  class="dark:bg-gray-950 dark:text-slate-100"
 >
 <head>
     <meta charset="UTF-8">
@@ -14,18 +13,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- application style -->
-    <link rel="stylesheet" href="dist/css/app.min.css?v=006" type="text/css" />
+    <link rel="stylesheet" href="dist/css/app.min.css?v=009" type="text/css" />
 
     <!-- head scripts -->
-    <script src="assets/js/theme-init.js?v=006"></script>
+    <script src="assets/js/theme-init.js?v=009"></script>
 </head>
-<body>
+<body class="dark:bg-slate-950 dark:text-slate-100">
+    <div class="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+        <div class="w-[108rem] flex-none flex justify-end">
+            <!-- <picture>
+                <source srcset="assets/images/background/body-light.avif" type="image/avif">
+                <img src="assets/images/background/body-light.avif" alt="Light body" class="w-[71.75rem] flex-none max-w-none dark:hidden" decoding="async">
+            </picture> -->
+            <picture>
+                <source srcset="assets/images/background/body-dark.avif" type="image/avif">
+                <img src="assets/images/background/body-dark.avif" alt="Dark body" class="w-[90rem] flex-none max-w-none hidden dark:block" decoding="async">
+            </picture>
+        </div>
+    </div>
+
     <!-- navbar -->
-    <header class="z-50">
+    <header>
         <!-- TODO: make navbar slide up when scroll down, and fixed it to top when scroll up -->
         <nav class="border-b border-slate-200 border-solid dark:border-slate-800 [&>*]:text-sm">
             <div class="flex justify-between items-center px-7 h-12 2xl:container mx-auto">
-                <div class="flex items-center">
+                <div class="flex items-center z-50">
                     <a href="#">
                         <img src="assets/images/logos/mgcodeur-logo.svg" alt="Mgcodeur Logo" class="h-9" />
                     </a>
@@ -46,13 +58,13 @@
                         <input
                           type="text"
                           name="search"
-                          class="h-10 bg-gray-100 rounded-full w-60 pl-12 pr-4 focus:outline-none font-normal dark:bg-gray-900 dark:text-slate-100"
+                          class="h-10 bg-gray-100 rounded-full w-60 pl-12 pr-4 focus:outline-none font-normal dark:bg-slate-900 dark:text-slate-100"
                           placeholder="Search" 
                         />
                     </form>
                 </div>
     
-                <ul class="flex items-center">
+                <ul class="flex items-center z-50">
                     <li class="me-8 hidden sm:flex">
                         <a href="#" class="flex items-center hover:text-stone-900 dark:hover:text-slate-300">
                             <span>
@@ -137,7 +149,7 @@
                         </a>
         
                         <ul
-                            class="absolute right-0 bg-white shadow py-4 top-[calc(100%+0.5rem)] rounded min-w-48 dark:bg-gray-900 z-50"
+                            class="absolute right-0 bg-white shadow py-4 top-[calc(100%+0.5rem)] rounded min-w-48 dark:bg-slate-900 z-50"
                             x-on:click.away="open = false"
                             x-show="open"
                             x-cloak
@@ -152,7 +164,7 @@
                                 <a
                                     href="#"
                                     :class="[
-                                        'flex items-center px-6 py-2 font-medium hover:bg-sky-100 dark:text-slate-100 dark:hover:bg-gray-800',
+                                        'flex items-center px-6 py-2 font-medium hover:bg-sky-100 dark:text-slate-100 dark:hover:bg-slate-800',
                                         theme === 'light' ? 'text-sky-500' : 'dark:text-slate-100'
                                     ]"
                                     x-on:click.prevent="theme = 'light'"
@@ -175,7 +187,7 @@
                                 <a
                                     href="#"
                                     :class="[
-                                        'flex items-center px-6 py-2 font-medium hover:bg-sky-100 dark:text-slate-100 dark:hover:bg-gray-800',
+                                        'flex items-center px-6 py-2 font-medium hover:bg-sky-100 dark:text-slate-100 dark:hover:bg-slate-800',
                                         theme === 'dark' ? 'dark:text-sky-500' : 'dark:text-slate-100'
                                     ]"
                                     x-on:click.prevent="theme = 'dark'"
@@ -198,7 +210,7 @@
                                 <a
                                     href="#"
                                     :class="[
-                                        'flex items-center px-6 py-2 font-medium hover:bg-sky-100 dark:text-slate-100 dark:hover:bg-gray-800',
+                                        'flex items-center px-6 py-2 font-medium hover:bg-sky-100 dark:text-slate-100 dark:hover:bg-slate-800',
                                         theme === 'system' ? 'dark:text-sky-500 text-sky-500' : 'dark:text-slate-100'
                                     ]"
                                     x-on:click.prevent="theme = 'system'"
@@ -226,7 +238,7 @@
                         </a>
         
                         <ul
-                            class="absolute right-0 bg-white shadow py-4 top-[calc(100%+0.5rem)] rounded min-w-64 dark:bg-gray-900 z-50"
+                            class="absolute right-0 bg-white shadow py-4 top-[calc(100%+0.5rem)] rounded min-w-64 dark:bg-slate-900 z-50"
                             x-on:click.away="open = false"
                             x-show="open"
                             x-cloak
@@ -238,7 +250,7 @@
                             x-transition:leave-end="opacity-0"
                         >
                             <li>
-                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                     <span class="me-4">
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"
@@ -254,7 +266,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                     <span class="me-4">
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"
@@ -270,7 +282,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                     <span class="me-4">
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"
@@ -286,7 +298,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                     <span class="me-4">
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"
@@ -303,29 +315,29 @@
                             </li>
                             <hr class="my-4 border-slate-200 dark:border-slate-700">
                             <li>
-                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                     Settings
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                     Refine recommendations
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                     Manage publications
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                     help
                                 </a>
                             </li>
                             <hr class="my-4 border-slate-200 dark:border-slate-700">
     
                             <li>
-                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                     Sign out 
                                 </a>
                             </li>
@@ -344,7 +356,7 @@
                 <!-- prev -->
                 <button
                   href="#"
-                  class="mt-1 absolute -left-6 md:-left-9 top-1/2 transform -translate-y-1/2 mt-0 hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100 lg:mt-4 hover:cursor-pointer z-10 categories__prev"
+                  class="mt-1 absolute -left-6 md:-left-9 top-1/2 transform -translate-y-1/2 mt-0 hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100 lg:mt-4 hover:cursor-pointer z-40 categories__prev"
                   x-cloak
                 >
                     <svg
@@ -361,7 +373,7 @@
                 <!-- next -->
                 <button
                   href="#"
-                  class="mt-1 absolute -right-3 md:-right-0 top-1/2 transform -translate-y-1/2 mt-0 hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100 lg:mt-4 hover:cursor-pointer z-10 categories__next"
+                  class="mt-1 absolute -right-3 md:-right-0 top-1/2 transform -translate-y-1/2 mt-0 hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100 lg:mt-4 hover:cursor-pointer z-40 categories__next"
                 >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -375,7 +387,7 @@
                     </svg>
                 </button>
 
-                <div class="splide categories__splide pt-0 lg:pt-6 w-full z-0" x-cloak>
+                <div class="splide categories__splide pt-0 lg:pt-6 w-full z-30" x-cloak>
                     <div class="splide__track pt-6">
                         <ul class="flex items-end splide__list">
                             <!-- <li class="me-6 splide__slide">
@@ -386,7 +398,7 @@
                                       viewBox="0 0 24 24"
                                       stroke="currentColor"
                                       stroke-width="1.5"
-                                      class="size-6 w-4 h-4 hover:bg-slate-200 dark:hover:bg-gray-800 rounded-full text-slate-900 dark:text-slate-100"
+                                      class="size-6 w-4 h-4 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full text-slate-900 dark:text-slate-100"
                                     >
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                     </svg>                              
@@ -569,7 +581,7 @@
                                                 </svg>
                                 
                                                 <ul
-                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-gray-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-gray-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-4 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
+                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-4 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
                                                     x-on:click.away="open = false"
                                                     x-show="open"
                                                     x-cloak
@@ -581,7 +593,7 @@
                                                     x-transition:leave-end="opacity-0"
                                                 >
                                                     <li>
-                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                                             Follow author
                                                         </a>
                                                     </li>
@@ -589,12 +601,12 @@
                                                     <hr class="my-4 border-slate-200 dark:border-slate-700">
 
                                                     <li>
-                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                                             Mute author
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#" class="flex items-center px-6 py-2 text-red-500 hover:text-red-700 dark:hover:text-red-500 dark:hover:bg-gray-800">
+                                                        <a href="#" class="flex items-center px-6 py-2 text-red-500 hover:text-red-700 dark:hover:text-red-500 dark:hover:bg-slate-800">
                                                             Report story
                                                         </a>
                                                     </li>
@@ -723,7 +735,7 @@
                                                 </svg>
                                 
                                                 <ul
-                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-gray-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-gray-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-4 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
+                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-4 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
                                                     x-on:click.away="open = false"
                                                     x-show="open"
                                                     x-cloak
@@ -735,7 +747,7 @@
                                                     x-transition:leave-end="opacity-0"
                                                 >
                                                     <li>
-                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                                             Follow author
                                                         </a>
                                                     </li>
@@ -743,12 +755,12 @@
                                                     <hr class="my-4 border-slate-200 dark:border-slate-700">
 
                                                     <li>
-                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                                             Mute author
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#" class="flex items-center px-6 py-2 text-red-500 hover:text-red-700 dark:hover:text-red-500 dark:hover:bg-gray-800">
+                                                        <a href="#" class="flex items-center px-6 py-2 text-red-500 hover:text-red-700 dark:hover:text-red-500 dark:hover:bg-slate-800">
                                                             Report story
                                                         </a>
                                                     </li>
@@ -877,7 +889,7 @@
                                                 </svg>
                                 
                                                 <ul
-                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-gray-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-gray-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-4 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
+                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-4 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
                                                     x-on:click.away="open = false"
                                                     x-show="open"
                                                     x-cloak
@@ -889,7 +901,7 @@
                                                     x-transition:leave-end="opacity-0"
                                                 >
                                                     <li>
-                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                                             Follow author
                                                         </a>
                                                     </li>
@@ -897,12 +909,12 @@
                                                     <hr class="my-4 border-slate-200 dark:border-slate-700">
 
                                                     <li>
-                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-gray-800">
+                                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
                                                             Mute author
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#" class="flex items-center px-6 py-2 text-red-500 hover:text-red-700 dark:hover:text-red-500 dark:hover:bg-gray-800">
+                                                        <a href="#" class="flex items-center px-6 py-2 text-red-500 hover:text-red-700 dark:hover:text-red-500 dark:hover:bg-slate-800">
                                                             Report story
                                                         </a>
                                                     </li>
@@ -922,7 +934,7 @@
         </div>
 
         <!-- aside -->
-        <aside class="hidden lg:block pe-6 ps-10 border-l border-slate-200 dark:border-slate-800">
+        <aside class="hidden lg:block pe-6 ps-10 border-l border-slate-200 dark:border-slate-800 z-40 sticky">
             <div class="pt-12">
                 <h2 class="fs-sm text-slate-900 dark:text-slate-100 font-medium">Staff Picks</h2>
             </div>
@@ -930,8 +942,8 @@
     </section>
 
     <!-- vendors -->
-    <script defer src="assets/vendors/js/alpinejs.min.js?v=006"></script>
+    <script defer src="assets/vendors/js/alpinejs.min.js?v=009"></script>
     <!-- application scripts -->
-    <script src="dist/js/app.min.js?v=006"></script>
+    <script src="dist/js/app.min.js?v=009"></script>
 </body>
 </html>
