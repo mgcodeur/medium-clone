@@ -34,9 +34,11 @@ const initSplide = () => {
                 perPage: 7,
             }
         }
-    }).mount();
+    });
 
     categories_splide.root.removeAttribute('x-cloak');
+
+    categories_splide.mount();
 
     categories_splide.on('moved', () => {
         toggleSplideArrows(categories_prev, categories_next, categories_splide);
@@ -56,9 +58,6 @@ const initSplide = () => {
 function toggleSplideArrows(prevElement, nextElement, splide) {
     const currentIndex = splide.index; 
     const totalSlides = splide.Components.Elements.slides.length; 
-    console.log('Current Index:', currentIndex);
-    console.log('Total Slides:', totalSlides);
-    console.log('Per Page:', splide.options.perPage);
 
     const can_display_prev = currentIndex > 0;
     const can_display_next = currentIndex < totalSlides - splide.options.perPage;
