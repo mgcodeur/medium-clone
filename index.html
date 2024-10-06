@@ -13,17 +13,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- application style -->
-    <link rel="stylesheet" href="dist/css/app.min.css?v=014" type="text/css" />
+    <link rel="stylesheet" href="dist/css/app.min.css?v=015" type="text/css" />
 
     <!-- head scripts -->
-    <script src="assets/js/theme-init.js?v=014"></script>
+    <script src="assets/js/theme-init.js?v=015"></script>
 </head>
 <body class="dark:bg-slate-950 dark:text-slate-100">
     <div class="absolute z-40 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
         <div class="w-[108rem] flex-none flex justify-end">
             <picture>
                 <source srcset="assets/images/background/body-light.avif" type="image/avif">
-                <img src="assets/images/background/body-light.avif" alt="Light body" class="w-[71.75rem] flex-none max-w-none dark:hidden" decoding="async">
+                <img src="assets/images/background/body-light.avif" alt="Light body" class="w-[71.75rem] flex-none max-w-none dark:hidden sm:hidden" decoding="async">
             </picture>
             <picture>
                 <source srcset="assets/images/background/body-dark.avif" type="image/avif">
@@ -468,7 +468,6 @@
 
             <!-- post lists -->
             <main>
-                
                 <!-- post -->
                 <article class="pt-12 pb-5 border-b border-slate-200 border-solid dark:border-slate-800">
                     <div class="relative">
@@ -1088,9 +1087,8 @@
         </div>
 
         <!-- aside -->
-        <aside class="hidden lg:block pe-6 ps-10 border-l border-slate-200 dark:border-slate-800 z-40">
-            <div class="pt-6">  
-
+        <aside class="hidden lg:block pe-6 ps-10 border-l border-slate-200 dark:border-slate-800 z-40 relative">
+            <div class="pt-6 sticky top-0">
                 <!-- recent posts -->
                 <div class="mb-8">
                     <h2 class="fs-sm text-stone-900 dark:text-slate-100 font-medium mb-6">Recent posts</h2>
@@ -1185,7 +1183,7 @@
                     </ul>
                 </div>
 
-                <!-- recommended  topics -->
+                <!-- Who to follow -->
                 <div class="mb-8">
                     <h2 class="fs-sm text-stone-900 dark:text-slate-100 font-medium mb-6">Who to follow</h2>
 
@@ -1238,10 +1236,8 @@
                     </div>
                 </div>
 
-
-
                 <!-- recommended posts -->
-                <div class="mb-8">
+                <div class="mb-2">
                     <h2 class="fs-sm text-stone-900 dark:text-slate-100 font-medium mb-6">Recommended posts</h2>
 
                     <!-- post -->
@@ -1304,13 +1300,49 @@
                         </ul>
                     </article>
                 </div>
+
+                <!-- footer -->
+                <footer>
+                    <ul class="py-6 text-xs flex items-center flex-wrap gap-2">
+                        <li>
+                            <a href="#">Help</a>
+                        </li>
+                        <li>
+                            <a href="#">Status</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Careers</a>
+                        </li>
+                        <li>
+                            <a href="#">Press</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms</a>
+                        </li>
+                        <li>
+                            <a href="#">Text to speech</a>
+                        </li>
+                        <li>
+                            <a href="#">Teams</a>
+                        </li>
+                    </ul>
+                </footer>
             </div>
         </aside>
     </section>
 
     <!-- vendors -->
-    <script defer src="assets/vendors/js/alpinejs.min.js?v=014"></script>
+    <script defer src="assets/vendors/js/alpinejs.min.js?v=015"></script>
     <!-- application scripts -->
-    <script src="dist/js/app.min.js?v=014"></script>
+    <script src="dist/js/app.min.js?v=015"></script>
 </body>
 </html>
