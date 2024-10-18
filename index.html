@@ -13,13 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- application style -->
-    <link rel="stylesheet" href="dist/css/app.min.css?v=015" type="text/css" />
+    <link rel="stylesheet" href="dist/css/app.min.css?v=016" type="text/css" />
 
     <!-- head scripts -->
-    <script src="assets/js/theme-init.js?v=015"></script>
+    <script src="assets/js/theme-init.js?v=016"></script>
 </head>
 <body class="dark:bg-slate-950 dark:text-slate-100">
-    <div class="absolute z-40 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+    <div class="absolute z-[60] top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
         <div class="w-[108rem] flex-none flex justify-end">
             <picture>
                 <source srcset="assets/images/background/body-light.avif" type="image/avif">
@@ -33,9 +33,10 @@
     </div>
 
     <!-- navbar -->
-    <header>
+    <!-- transform -translate-y-full -->
+    <header class="fixed top-0 w-full z-50 h-12 navbar bg-white dark:bg-slate-950">
         <!-- TODO: make navbar slide up when scroll down, and fixed it to top when scroll up -->
-        <nav class="border-b border-slate-200 border-solid dark:border-slate-800 [&>*]:text-sm">
+        <nav class="border-b border-slate-200 border-solid dark:border-slate-800 [&>*]:text-sm h-full">
             <div class="flex justify-between items-center px-7 h-12 2xl:container mx-auto">
                 <div class="flex items-center z-50">
                     <a href="#">
@@ -348,8 +349,7 @@
         </nav>
     </header>
 
-    <section class="container mx-auto grid grid-cols-3 gap-20">
-
+    <section class="container mx-auto grid grid-cols-3 gap-20 mt-12">
         <div class="col-span-3 lg:col-span-2 px-7">
             <!-- categories list -->
             <nav class="[&>*]:text-sm relative max-w-full border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30 bg-white dark:bg-slate-950">
@@ -1341,8 +1341,8 @@
     </section>
 
     <!-- vendors -->
-    <script defer src="assets/vendors/js/alpinejs.min.js?v=015"></script>
+    <script defer src="assets/vendors/js/alpinejs.min.js?v=016"></script>
     <!-- application scripts -->
-    <script src="dist/js/app.min.js?v=015"></script>
+    <script src="dist/js/app.min.js?v=016"></script>
 </body>
 </html>
