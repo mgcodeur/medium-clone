@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-  lang="en"
+  lang="fr"
   x-data="{ theme: localStorage.getItem('theme') || 'system' }" 
   x-init="$watch('theme', value => localStorage.setItem('theme', value))" 
   :data-theme="theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'"
@@ -8,23 +8,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medium Clone - Home</title>
+    <title>Home - write and share your stories</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- S.E.O Meta's -->
+    <meta name="description" content="Write and share your stories, ideas, and experiences on Write Blog.">
+    <meta name="keywords" content="write, blog, stories, ideas, experiences, share, read, write blog">
+    <meta name="author" content="Mgcodeur">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta's -->
+    <meta property="og:title" content="Home - write and share your stories">
+    <meta property="og:description" content="Write and share your stories, ideas, and experiences on Write Blog.">
+    <meta property="og:image" content="assets/images/logos/mgcodeur-logo.svg">
+    <meta property="og:url" content="https://write.kintana-technology.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Write Blog">
+
+    
+    <!-- Twitter Meta's -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mgcodeur">
+    <meta name="twitter:creator" content="@mgcodeur">
+    <meta name="twitter:title" content="Home - write and share your stories">
+    <meta name="twitter:description" content="Write and share your stories, ideas, and experiences on Write Blog.">
+    <meta name="twitter:image" content="assets/images/logos/mgcodeur-logo.svg">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Write" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
     <!-- application style -->
-    <link rel="stylesheet" href="dist/css/app.min.css?v=016" type="text/css" />
+    <link rel="stylesheet" href="dist/css/app.min.css?v=017" type="text/css" />
 
     <!-- head scripts -->
-    <script src="assets/js/theme-init.js?v=016"></script>
+    <script src="assets/js/theme-init.js?v=017"></script>
 </head>
 <body class="dark:bg-slate-950 dark:text-slate-100">
-    <div class="absolute z-[60] top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+    <div class="absolute z-[60] top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none hidden lg:flex">
         <div class="w-[108rem] flex-none flex justify-end">
-            <picture>
-                <source srcset="assets/images/background/body-light.avif" type="image/avif">
-                <img src="assets/images/background/body-light.avif" alt="Light body" class="w-[71.75rem] flex-none max-w-none dark:hidden sm:hidden" decoding="async">
-            </picture>
             <picture>
                 <source srcset="assets/images/background/body-dark.avif" type="image/avif">
                 <img src="assets/images/background/body-dark.avif" alt="Dark body" class="w-[90rem] flex-none max-w-none hidden dark:block" decoding="async">
@@ -34,7 +61,7 @@
 
     <!-- navbar -->
     <!-- transform -translate-y-full -->
-    <header class="fixed top-0 w-full z-50 h-12 navbar bg-white dark:bg-slate-950">
+    <header class="fixed top-0 w-full z-[60] lg:z-50 h-12 navbar bg-white dark:bg-slate-950">
         <!-- TODO: make navbar slide up when scroll down, and fixed it to top when scroll up -->
         <nav class="border-b border-slate-200 border-solid dark:border-slate-800 [&>*]:text-sm h-full">
             <div class="flex justify-between items-center px-7 h-12 2xl:container mx-auto">
@@ -1341,8 +1368,8 @@
     </section>
 
     <!-- vendors -->
-    <script defer src="assets/vendors/js/alpinejs.min.js?v=016"></script>
+    <script defer src="assets/vendors/js/alpinejs.min.js?v=017"></script>
     <!-- application scripts -->
-    <script src="dist/js/app.min.js?v=016"></script>
+    <script src="dist/js/app.min.js?v=017"></script>
 </body>
 </html>

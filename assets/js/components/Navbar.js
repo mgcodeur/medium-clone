@@ -9,7 +9,7 @@ class Navbar {
     #currentScrollY = 0;
 
     /** @type {boolean} */
-    #isScrollDown = false;
+    #isScrollingDown = false;
 
     /** @type {HTMLElement} */
     #element;
@@ -32,10 +32,9 @@ class Navbar {
 
     onScroll() {
         const scrollY = window.scrollY;
-        this.#isScrollDown = scrollY > this.#currentScrollY;
-        const canSlideUp = this.#isScrollDown;
+        this.#isScrollingDown = scrollY > this.#currentScrollY;
 
-        if(canSlideUp) {
+        if(this.#isScrollingDown) {
             this.slideUpNavbar();
             this.updateStickyElementsPosition();
         }
@@ -56,7 +55,7 @@ class Navbar {
     }
 
     updateStickyElementsPosition() {
-        if(this.#isScrollDown) {
+        if(this.#isScrollingDown) {
             Navbar.#stickyElements.forEach(element => {
                 element.classList.replace('top-12', 'top-0');
             });
