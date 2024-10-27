@@ -369,128 +369,113 @@
 
     <section class="container mx-auto grid grid-cols-3 gap-20 mt-12">
         <div class="col-span-3 lg:col-span-2 px-7">
-            <!-- categories list -->
-            <nav class="[&>*]:text-sm relative max-w-full border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30 bg-white dark:bg-slate-950">
-                <!-- prev -->
-                <button
-                  href="#"
-                  class="mt-1 absolute -left-6 md:-left-9 top-1/2 transform -translate-y-1/2 mt-0 hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100 hover:cursor-pointer z-40 categories__prev"
-                  x-cloak
-                >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      class="size-5 stroke-1"
-                    >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                    </svg>
-                </button>
-                
-                <!-- next -->
-                <button
-                  href="#"
-                  class="mt-1 absolute -right-3 md:-right-0 top-1/2 transform -translate-y-1/2 mt-0 hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100 hover:cursor-pointer z-40 categories__next"
-                >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      class="size-5 stroke-1"
-                      x-cloak
-                    >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                    </svg>
-                </button>
+            <div>
+                <!-- banner -->
+                <img src="assets/images/author/banner/01.jpeg" alt="Author Mgcodeur" class="w-full h-40 object-cover">
 
-                <div class="splide categories__splide w-full z-30" x-cloak>
-                    <div class="splide__track pt-6">
-                        <ul class="flex items-end splide__list">
-                            <!-- <li class="me-6 splide__slide">
-                                <a href="#" class="pb-4 inline-block">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      fill="none"
-                                      viewBox="0 0 24 24"
-                                      stroke="currentColor"
-                                      stroke-width="1.5"
-                                      class="size-6 w-4 h-4 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full text-slate-900 dark:text-slate-100"
-                                    >
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                    </svg>                              
-                                </a>
-                            </li> -->
-        
-                            <li class="splide__slide">
-                                <a
-                                  href="#"
-                                  class="pb-4 inline-block border-b border-slate-900 dark:border-slate-100 hover:text-stone-900 text-stone-900 dark:text-slate-100 dark:hover:text-slate-100"
+                <div class="my-12">
+                    <div class="flex justify-between items-center mb-12">
+                        <!-- author name -->
+                        <div class="text-4xl text-slate-900 dark:text-slate-100 font-medium">Iharena (Mgcodeur)</div>
+
+                        <!-- actions -->
+                        <div x-data="{ open: false }" class="relative">
+                            <a
+                                href="#"
+                                class="hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100"
+                                x-on:click.prevent="open = !open"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    class="size-6"
                                 >
-                                    For you
-                                </a>
-                            </li>
-        
-                            <li class="splide__slide">
-                                <a href="#" class="pb-4 inline-block hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100">
-                                    Following
-                                </a>
-                            </li>
-        
-                            <li class="splide__slide">
-                                <a href="#" class="pb-4 inline-block hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100">
-                                    Ux design
-                                </a>
-                            </li>
-        
-                            <li class="splide__slide">
-                                <a href="#" class="pb-4 inline-block hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100">
-                                    NodeJs
-                                </a>
-                            </li>
-        
-                            <li class="splide__slide">
-                                <a href="#" class="pb-4 inline-block hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100">
-                                    Adonis
-                                </a>
-                            </li>
-        
-                            <li class="splide__slide">
-                                <a href="#" class="pb-4 inline-block hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100">
-                                    Symfony
-                                </a>
-                            </li>
-        
-                            <li class="splide__slide">
-                                <a href="#" class="pb-4 inline-block hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100">
-                                    Laravel
-                                </a>
-                            </li>
-        
-                            <li class="splide__slide">
-                                <a href="#" class="pb-4 inline-block hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100">
-                                    NuxtJs
-                                </a>
-                            </li>
-        
-                            <li class="splide__slide">
-                                <a href="#" class="pb-4 inline-block hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100">
-                                    Vuejs
-                                </a>
-                            </li>
-                        </ul>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>
+                
+                                <ul
+                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+0.5rem)] rounded min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-3 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
+                                    x-on:click.away="open = false"
+                                    x-show="open"
+                                    x-cloak
+                                    x-transition:enter="transition ease-out duration-100"
+                                    x-transition:enter-start="opacity-0"
+                                    x-transition:enter-end="opacity-100"
+                                    x-transition:leave="transition ease-in duration-150"
+                                    x-transition:leave-start="opacity-100"
+                                    x-transition:leave-end="opacity-0"
+                                >
+                                    <li>
+                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
+                                            Copy Link to Profile
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
+                                            Mute author
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="flex items-center px-6 py-2 hover:text-stone-900 dark:hover:text-slate-300 dark:hover:bg-slate-800">
+                                            Block this author
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="flex items-center px-6 py-2 text-red-500 hover:text-red-700 dark:hover:text-red-500 dark:hover:bg-slate-800">
+                                            Report story
+                                        </a>
+                                    </li>
+                                </ul>
+                            </a>
+                        </div>
                     </div>
+
+                    <!-- Profile navigation -->
+                    <nav class="[&>*]:text-sm relative max-w-full border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30 bg-white dark:bg-slate-950">        
+                        <div class="w-full z-30" x-cloak>
+                            <ul class="flex items-end">
+                                <li class="me-8">
+                                    <a
+                                      href="#"
+                                      class="pb-4 inline-block border-b border-slate-900 dark:border-slate-100 hover:text-stone-900 text-stone-900 dark:text-slate-100 dark:hover:text-slate-100"
+                                    >
+                                        Home
+                                    </a>
+                                </li>
+            
+                                <li>
+                                    <a href="#" class="pb-4 inline-block hover:text-stone-900 dark:text-slate-300 dark:hover:text-slate-100">
+                                        About
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-            </nav>
+            </div>
 
             <!-- post lists -->
             <main>
                 <!-- post -->
-                <article class="pt-12 pb-5 border-b border-slate-200 border-solid dark:border-slate-800">
+                <article class="pt-8 pb-5 border-b border-slate-200 border-solid dark:border-slate-800">
                     <div class="relative">
+                        <div class="mb-4 flex items-center gap-2">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
+                                </svg>                                  
+                            </span>
+
+                            <span>Pinned</span>
+                        </div>
                         <div class="flex items-center mb-4">
-                            <a href="author.html" class="z-10">
+                            <a href="#" class="z-10">
                                 <img
                                     src="assets/images/avatars/me.jpg"
                                     alt="Author Mgcodeur" 
@@ -499,7 +484,7 @@
                             </a>
 
                             <div class="text-sm z-10">
-                                <a href="author.html" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
+                                <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
                                 <span class="dark:text-slate-300">in</span>
                                 <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Mgcodeur Team</a>
                             </div>
@@ -641,10 +626,19 @@
                 </article>
                 
                 <!-- post -->
-                <article class="pt-12 pb-5 border-b border-slate-200 border-solid dark:border-slate-800">
+                <article class="pt-8 pb-5 border-b border-slate-200 border-solid dark:border-slate-800">
                     <div class="relative">
+                        <div class="mb-4 flex items-center gap-2">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
+                                </svg>                                  
+                            </span>
+
+                            <span>Pinned</span>
+                        </div>
                         <div class="flex items-center mb-4">
-                            <a href="author.html" class="z-10">
+                            <a href="#" class="z-10">
                                 <img
                                     src="assets/images/avatars/me.jpg"
                                     alt="Author Mgcodeur" 
@@ -653,7 +647,7 @@
                             </a>
 
                             <div class="text-sm z-10">
-                                <a href="author.html" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
+                                <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
                                 <span class="dark:text-slate-300">in</span>
                                 <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Mgcodeur Team</a>
                             </div>
@@ -795,10 +789,10 @@
                 </article>
                 
                 <!-- post -->
-                <article class="pt-12 pb-5 border-b border-slate-200 border-solid dark:border-slate-800">
+                <article class="pt-8 pb-5 border-b border-slate-200 border-solid dark:border-slate-800">
                     <div class="relative">
                         <div class="flex items-center mb-4">
-                            <a href="author.html" class="z-10">
+                            <a href="#" class="z-10">
                                 <img
                                     src="assets/images/avatars/me.jpg"
                                     alt="Author Mgcodeur" 
@@ -807,7 +801,7 @@
                             </a>
 
                             <div class="text-sm z-10">
-                                <a href="author.html" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
+                                <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
                                 <span class="dark:text-slate-300">in</span>
                                 <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Mgcodeur Team</a>
                             </div>
@@ -949,10 +943,10 @@
                 </article>
                 
                 <!-- post -->
-                <article class="pt-12 pb-5 border-b border-slate-200 border-solid dark:border-slate-800">
+                <article class="pt-8 pb-5 border-b border-slate-200 border-solid dark:border-slate-800">
                     <div class="relative">
                         <div class="flex items-center mb-4">
-                            <a href="author.html" class="z-10">
+                            <a href="#" class="z-10">
                                 <img
                                     src="assets/images/avatars/me.jpg"
                                     alt="Author Mgcodeur" 
@@ -961,7 +955,7 @@
                             </a>
 
                             <div class="text-sm z-10">
-                                <a href="author.html" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
+                                <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
                                 <span class="dark:text-slate-300">in</span>
                                 <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Mgcodeur Team</a>
                             </div>
@@ -1106,217 +1100,28 @@
 
         <!-- aside -->
         <aside class="hidden lg:block pe-6 ps-10 border-l border-slate-200 dark:border-slate-800 z-40 relative">
-            <div class="pt-6 sticky top-0">
-                <!-- recent posts -->
-                <div class="mb-8">
-                    <h2 class="fs-sm text-stone-900 dark:text-slate-100 font-medium mb-6">Recent posts</h2>
+            <div class="pt-6 sticky top-0 flex flex-col h-[calc(100vh-3rem)]">
+                <!-- author -->
+                <div class="flex-1">
+                    <img src="assets/images/author/avatar/01.jpg" alt="Author Mgcodeur" class="w-20 h-20 object-cover rounded-full">
 
-                    <!-- post -->
-                    <article class="relative mb-6">
-                        <div class="flex items-center mb-2">
-                            <a href="author.html" class="z-10">
-                                <img
-                                    src="assets/images/avatars/me.jpg"
-                                    alt="Author Mgcodeur" 
-                                    class="w-5 h-5 rounded-full me-2"
-                                />
-                            </a>
+                    <div class="mt-4 mb-2 text-base font-medium text-slate-900 dark:text-slate-100">Iharena (Mgcodeur)</div>
 
-                            <div class="text-sm z-10">
-                                <a href="author.html" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
-                                <!-- <span class="dark:text-slate-300">in</span>
-                                <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Mgcodeur Team</a> -->
-                            </div>
-                        </div>
+                    <a href="#" class="hover:text-slate-900 dark:hover:text-slate-100 block mb-3">5k Followers</a>
 
-                        <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-2">
-                            <a href="#" class="before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0">
-                                Simple tips to avoid ThemeForest rejection for the first time
-                            </a>
-                        </h3>
+                    <p class="text-sm leading-5 mb-6">
+                        Senior Software Engineer, Tech Enthusiast, and Blogger. 
+                        I write about software development, web development, and tech-related topics.
+                    </p>
 
-                        <ul class="text-sm [&>li:not(:first-of-type)]:before:content-['·'] [&>li:not(:first-of-type)]:before:inline-block [&>li:not(:first-of-type)]:before:mx-2 flex items-center">
-                            <li>Apr 10, 2018</li>
-                            <li>7min to read</li>
-                        </ul>
-                    </article>
-
-                    <!-- post -->
-                    <article class="relative">
-                        <div class="flex items-center mb-2">
-                            <a href="author.html" class="z-10">
-                                <img
-                                    src="assets/images/avatars/me.jpg"
-                                    alt="Author Mgcodeur" 
-                                    class="w-5 h-5 rounded-full me-2"
-                                />
-                            </a>
-
-                            <div class="text-sm z-10">
-                                <a href="author.html" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
-                                <!-- <span class="dark:text-slate-300">in</span>
-                                <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Mgcodeur Team</a> -->
-                            </div>
-                        </div>
-
-                        <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-2">
-                            <a href="#" class="before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0">
-                                Simple tips to avoid ThemeForest rejection for the first time
-                            </a>
-                        </h3>
-
-                        <ul class="text-sm [&>li:not(:first-of-type)]:before:content-['·'] [&>li:not(:first-of-type)]:before:inline-block [&>li:not(:first-of-type)]:before:mx-2 flex items-center">
-                            <li>Apr 10, 2018</li>
-                            <li>7min to read</li>
-                        </ul>
-                    </article>
-                </div>
-
-                <!-- recommended  topics -->
-                <div class="mb-8">
-                    <h2 class="fs-sm text-stone-900 dark:text-slate-100 font-medium mb-6">Recommended topics</h2>
-
-                    <ul class="text-sm flex gap-2 flex-wrap">
-                        <li>
-                            <a href="#" class="px-3 py-2 bg-neutral-200 text-slate-900 inline-block rounded-full dark:bg-slate-900 dark:text-slate-100">Self improvement</a>
-                        </li>
-                        <li>
-                            <a href="#" class="px-3 py-2 bg-neutral-200 text-slate-900 inline-block rounded-full dark:bg-slate-900 dark:text-slate-100">Vuejs</a>
-                        </li>
-                        <li>
-                            <a href="#" class="px-3 py-2 bg-neutral-200 text-slate-900 inline-block rounded-full dark:bg-slate-900 dark:text-slate-100">React</a>
-                        </li>
-                        <li>
-                            <a href="#" class="px-3 py-2 bg-neutral-200 text-slate-900 inline-block rounded-full dark:bg-slate-900 dark:text-slate-100">Angular</a>
-                        </li>
-                        <li>
-                            <a href="#" class="px-3 py-2 bg-neutral-200 text-slate-900 inline-block rounded-full dark:bg-slate-900 dark:text-slate-100">Laravel</a>
-                        </li>
-                        <li>
-                            <a href="#" class="px-3 py-2 bg-neutral-200 text-slate-900 inline-block rounded-full dark:bg-slate-900 dark:text-slate-100">Php</a>
-                        </li>
-                        <li>
-                            <a href="#" class="px-3 py-2 bg-neutral-200 text-slate-900 inline-block rounded-full dark:bg-slate-900 dark:text-slate-100">Adonis</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Who to follow -->
-                <div class="mb-8">
-                    <h2 class="fs-sm text-stone-900 dark:text-slate-100 font-medium mb-6">Who to follow</h2>
-
-                    <!-- author -->
-                    <div class="flex items-start gap-4 relative mb-6">   
-                        <div>
-                            <a href="author.html" class="before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0">
-                                <img src="assets/images/avatars/me.jpg" alt="This is me" class="w-8 h-8 rounded-full mt-1">
-                            </a>
-                        </div>
-
-                        <div>
-                            <div class="font-semibold text-slate-900 dark:text-slate-100 mb-1 text-sm">Mgcodeur</div>
-                            <div class="text-xs">FullStack Developer</div>
-                        </div>
-
-                        <button type="button" class="text-sm border py-1 px-3 border-slate-900 border-solid text-slate-900 dark:text-slate-100 dark:border-slate-100 rounded-full self-center z-10">Follow</button>
+                    <div class="flex items-center gap-2">
+                        <a href="#" class="inline-flex px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-full text-sm">Follow</a>
+                        <a href="#" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-sky-600 hover:bg-sky-700 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+                            </svg>
+                        </a>
                     </div>
-
-                    <!-- author -->
-                    <div class="flex items-start gap-4 relative mb-6">   
-                        <div>
-                            <a href="author.html" class="before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0">
-                                <img src="assets/images/avatars/me.jpg" alt="This is me" class="w-8 h-8 rounded-full mt-1">
-                            </a>
-                        </div>
-
-                        <div>
-                            <div class="font-semibold text-slate-900 dark:text-slate-100 mb-1 text-sm">Mgcodeur</div>
-                            <div class="text-xs">FullStack Developer</div>
-                        </div>
-
-                        <button type="button" class="text-sm border py-1 px-3 border-slate-900 border-solid text-slate-900 dark:text-slate-100 dark:border-slate-100 rounded-full self-center z-10">Follow</button>
-                    </div>
-
-                    <!-- author -->
-                    <div class="flex items-start gap-4 relative">   
-                        <div>
-                            <a href="author.html" class="before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0">
-                                <img src="assets/images/avatars/me.jpg" alt="This is me" class="w-8 h-8 rounded-full mt-1">
-                            </a>
-                        </div>
-
-                        <div>
-                            <div class="font-semibold text-slate-900 dark:text-slate-100 mb-1 text-sm">Mgcodeur</div>
-                            <div class="text-xs">FullStack Developer</div>
-                        </div>
-
-                        <button type="button" class="text-sm border py-1 px-3 border-slate-900 border-solid text-slate-900 dark:text-slate-100 dark:border-slate-100 rounded-full self-center z-10">Follow</button>
-                    </div>
-                </div>
-
-                <!-- recommended posts -->
-                <div class="mb-2">
-                    <h2 class="fs-sm text-stone-900 dark:text-slate-100 font-medium mb-6">Recommended posts</h2>
-
-                    <!-- post -->
-                    <article class="relative mb-6">
-                        <div class="flex items-center mb-2">
-                            <a href="author.html" class="z-10">
-                                <img
-                                    src="assets/images/avatars/me.jpg"
-                                    alt="Author Mgcodeur" 
-                                    class="w-5 h-5 rounded-full me-2"
-                                />
-                            </a>
-
-                            <div class="text-sm z-10">
-                                <a href="author.html" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
-                                <!-- <span class="dark:text-slate-300">in</span>
-                                <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Mgcodeur Team</a> -->
-                            </div>
-                        </div>
-
-                        <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-2">
-                            <a href="#" class="before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0">
-                                Simple tips to avoid ThemeForest rejection for the first time
-                            </a>
-                        </h3>
-
-                        <ul class="text-sm [&>li:not(:first-of-type)]:before:content-['·'] [&>li:not(:first-of-type)]:before:inline-block [&>li:not(:first-of-type)]:before:mx-2 flex items-center">
-                            <li>Apr 10, 2018</li>
-                            <li>7min to read</li>
-                        </ul>
-                    </article>
-
-                    <!-- post -->
-                    <article class="relative">
-                        <div class="flex items-center mb-2">
-                            <a href="author.html" class="z-10">
-                                <img
-                                    src="assets/images/avatars/me.jpg"
-                                    alt="Author Mgcodeur" 
-                                    class="w-5 h-5 rounded-full me-2"
-                                />
-                            </a>
-
-                            <div class="text-sm z-10">
-                                <a href="author.html" class="text-slate-900 dark:text-slate-100 hover:underline">Iharena</a>
-                                <!-- <span class="dark:text-slate-300">in</span>
-                                <a href="#" class="text-slate-900 dark:text-slate-100 hover:underline">Mgcodeur Team</a> -->
-                            </div>
-                        </div>
-
-                        <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-2">
-                            <a href="#" class="before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0">
-                                Simple tips to avoid ThemeForest rejection for the first time
-                            </a>
-                        </h3>
-
-                        <ul class="text-sm [&>li:not(:first-of-type)]:before:content-['·'] [&>li:not(:first-of-type)]:before:inline-block [&>li:not(:first-of-type)]:before:mx-2 flex items-center">
-                            <li>Apr 10, 2018</li>
-                            <li>7min to read</li>
-                        </ul>
-                    </article>
                 </div>
 
                 <!-- footer -->

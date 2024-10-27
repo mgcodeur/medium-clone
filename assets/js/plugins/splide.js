@@ -5,6 +5,10 @@ const initSplide = () => {
     const categories_next = document.querySelector('.categories__next');
     const categories_prev = document.querySelector('.categories__prev');
 
+    if (!categories_next || !categories_prev) {
+        return;
+    }
+
     categories_prev.removeAttribute('x-show');
 
     categories_next.removeAttribute('x-show');

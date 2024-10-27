@@ -58,11 +58,15 @@ class Navbar {
         if(this.#isScrollingDown) {
             Navbar.#stickyElements.forEach(element => {
                 element.classList.replace('top-12', 'top-0');
+                const hasHeightClass = element.classList.contains('h-[calc(100vh-3rem)]');
+                hasHeightClass && element.classList.replace('h-[calc(100vh-3rem)]', 'h-[100vh]');
             });
         }
         else {
             Navbar.#stickyElements.forEach(element => {
                 element.classList.replace('top-0', 'top-12');
+                const hasHeightClass = element.classList.contains('h-[100vh]');
+                hasHeightClass && element.classList.replace('h-[100vh]', 'h-[calc(100vh-3rem)]');
             });
         }
     }
