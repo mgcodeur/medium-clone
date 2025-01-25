@@ -52,9 +52,9 @@
 <body class="dark:bg-slate-950 dark:text-slate-100">
     <!-- navbar -->
     <!-- transform -translate-y-full -->
-    <header class="fixed top-0 w-full z-[60] lg:z-50 h-12 navbar bg-white dark:bg-slate-950">
+    <header class="fixed top-0 w-full z-60 lg:z-50 h-12 navbar bg-white dark:bg-slate-950">
         <!-- TODO: make navbar slide up when scroll down, and fixed it to top when scroll up -->
-        <nav class="border-b border-slate-200 border-solid dark:border-slate-800 [&>*]:text-sm h-full">
+        <nav class="border-b border-slate-200 border-solid dark:border-slate-800 *:text-sm h-full">
             <div class="flex justify-between items-center px-7 h-12 2xl:container mx-auto">
                 <div class="flex items-center z-50">
                     <a href="index.html">
@@ -77,7 +77,7 @@
                         <input
                           type="text"
                           name="search"
-                          class="h-10 bg-gray-100 rounded-full w-60 pl-12 pr-4 focus:outline-none font-normal dark:bg-slate-900 dark:text-slate-100"
+                          class="h-10 bg-gray-100 rounded-full w-60 pl-12 pr-4 focus:outline-hidden font-normal dark:bg-slate-900 dark:text-slate-100"
                           placeholder="Search" 
                         />
                     </form>
@@ -168,7 +168,7 @@
                         </a>
         
                         <ul
-                            class="absolute right-0 bg-white shadow py-4 top-[calc(100%+0.5rem)] rounded min-w-48 dark:bg-slate-900 z-50"
+                            class="absolute right-0 bg-white shadow-sm py-4 top-[calc(100%+0.5rem)] rounded-sm min-w-48 dark:bg-slate-900 z-50"
                             x-on:click.away="open = false"
                             x-show="open"
                             x-cloak
@@ -257,7 +257,7 @@
                         </a>
         
                         <ul
-                            class="absolute right-0 bg-white shadow py-4 top-[calc(100%+0.5rem)] rounded min-w-64 dark:bg-slate-900 z-50"
+                            class="absolute right-0 bg-white shadow-sm py-4 top-[calc(100%+0.5rem)] rounded-sm min-w-64 dark:bg-slate-900 z-50"
                             x-on:click.away="open = false"
                             x-show="open"
                             x-cloak
@@ -370,7 +370,7 @@
     <section class="container mx-auto grid grid-cols-3 gap-20 mt-12">
         <div class="col-span-3 lg:col-span-2 px-7">
             <!-- categories list -->
-            <nav class="[&>*]:text-sm relative max-w-full border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30 bg-white dark:bg-slate-950">
+            <nav class="*:text-sm relative max-w-full border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30 bg-white dark:bg-slate-950">
                 <!-- prev -->
                 <button
                   href="#"
@@ -554,7 +554,7 @@
                                     </div>
 
                                     <div class="flex z-20">
-                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100">
+                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100">
                                             <svg
                                               xmlns="http://www.w3.org/2000/svg"
                                               fill="none"
@@ -567,7 +567,7 @@
                                             </svg>
                                         </a>
 
-                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100">
+                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100">
                                             <svg
                                               xmlns="http://www.w3.org/2000/svg"
                                               fill="none"
@@ -583,7 +583,7 @@
                                         <div x-data="{ open: false }" class="relative">
                                             <a
                                                 href="#"
-                                                class="hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100"
+                                                class="hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100"
                                                 x-on:click.prevent="open = !open"
                                             >
                                                 <svg
@@ -598,7 +598,7 @@
                                                 </svg>
                                 
                                                 <ul
-                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-3 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
+                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow-sm py-4 top-[calc(100%+1.5rem)] rounded-sm min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-3 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
                                                     x-on:click.away="open = false"
                                                     x-show="open"
                                                     x-cloak
@@ -708,7 +708,7 @@
                                     </div>
 
                                     <div class="flex z-20">
-                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100">
+                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100">
                                             <svg
                                               xmlns="http://www.w3.org/2000/svg"
                                               fill="none"
@@ -721,7 +721,7 @@
                                             </svg>
                                         </a>
 
-                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100">
+                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100">
                                             <svg
                                               xmlns="http://www.w3.org/2000/svg"
                                               fill="none"
@@ -737,7 +737,7 @@
                                         <div x-data="{ open: false }" class="relative">
                                             <a
                                                 href="#"
-                                                class="hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100"
+                                                class="hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100"
                                                 x-on:click.prevent="open = !open"
                                             >
                                                 <svg
@@ -752,7 +752,7 @@
                                                 </svg>
                                 
                                                 <ul
-                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-3 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
+                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow-sm py-4 top-[calc(100%+1.5rem)] rounded-sm min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-3 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
                                                     x-on:click.away="open = false"
                                                     x-show="open"
                                                     x-cloak
@@ -862,7 +862,7 @@
                                     </div>
 
                                     <div class="flex z-20">
-                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100">
+                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100">
                                             <svg
                                               xmlns="http://www.w3.org/2000/svg"
                                               fill="none"
@@ -875,7 +875,7 @@
                                             </svg>
                                         </a>
 
-                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100">
+                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100">
                                             <svg
                                               xmlns="http://www.w3.org/2000/svg"
                                               fill="none"
@@ -891,7 +891,7 @@
                                         <div x-data="{ open: false }" class="relative">
                                             <a
                                                 href="#"
-                                                class="hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100"
+                                                class="hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100"
                                                 x-on:click.prevent="open = !open"
                                             >
                                                 <svg
@@ -906,7 +906,7 @@
                                                 </svg>
                                 
                                                 <ul
-                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-3 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
+                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow-sm py-4 top-[calc(100%+1.5rem)] rounded-sm min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-3 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
                                                     x-on:click.away="open = false"
                                                     x-show="open"
                                                     x-cloak
@@ -1016,7 +1016,7 @@
                                     </div>
 
                                     <div class="flex z-20">
-                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100">
+                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100">
                                             <svg
                                               xmlns="http://www.w3.org/2000/svg"
                                               fill="none"
@@ -1029,7 +1029,7 @@
                                             </svg>
                                         </a>
 
-                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100">
+                                        <a href="#" class="me-6 hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100">
                                             <svg
                                               xmlns="http://www.w3.org/2000/svg"
                                               fill="none"
@@ -1045,7 +1045,7 @@
                                         <div x-data="{ open: false }" class="relative">
                                             <a
                                                 href="#"
-                                                class="hover:cursor-pointer hover:text-slate-900 hover:dark:text-slate-100"
+                                                class="hover:cursor-pointer hover:text-slate-900 dark:hover:text-slate-100"
                                                 x-on:click.prevent="open = !open"
                                             >
                                                 <svg
@@ -1060,7 +1060,7 @@
                                                 </svg>
                                 
                                                 <ul
-                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow py-4 top-[calc(100%+1.5rem)] rounded min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-3 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
+                                                    class="absolute right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white shadow-sm py-4 top-[calc(100%+1.5rem)] rounded-sm min-w-64 dark:bg-slate-900 z-50 text-sm before:block before:border-8 before:border-solid before:border-t-transparent before:border-b-white dark:before:border-b-slate-900 before:border-l-transparent before:border-r-transparent before:border-right-transparent before:w-2 before:absolute before:-top-3 right-0 before:right-0 sm:before:right-[unset] right-0 sm:before:left-1/2 sm:before:-translate-x-1/2"
                                                     x-on:click.away="open = false"
                                                     x-show="open"
                                                     x-cloak

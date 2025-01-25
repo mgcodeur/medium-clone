@@ -1,17 +1,22 @@
 {
+  "type": "module",
   "scripts": {
-    "watch:css": "tailwindcss -i ./assets/css/app.css -o ./dist/css/app.min.css --watch",
-    "build:css": "tailwindcss -i ./assets/css/app.css -o ./dist/css/app.min.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./assets/css/app.css -o ./dist/css/app.min.css --watch",
+    "build:css": "npx @tailwindcss/cli -i ./assets/css/app.css -o ./dist/css/app.min.css --minify",
     "build:js": "vite build --mode production",
-    "watch:js": "vite build --watch"
+    "watch:js": "vite build --watch",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.13",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "tailwindcss": "^4.0.0",
     "vite": "^5.4.8"
   },
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
     "autoprefixer": "^10.4.20",
+    "husky": "^9.1.7",
     "postcss": "^8.4.47"
   }
 }
