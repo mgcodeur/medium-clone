@@ -32,8 +32,8 @@ jobs:
 
       - name: Build CSS + JS
         run: |
-          pnpm build:css
           pnpm build:js
+          pnpm build:css
 
       - name: Prepare publish folder (root html + dist)
         run: |
