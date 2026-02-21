@@ -1,1 +1,2 @@
-bun test
+pnpm build:css
+pnpm build:js

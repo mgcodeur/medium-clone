@@ -1,30 +1,59 @@
-name: Deploy To Write Subdomain
+name: Deploy GitHub Pages
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Enable corepack (pnpm)
+        run: corepack enable
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Build CSS + JS
+        run: |
+          pnpm build:css
+          pnpm build:js
+
+      - name: Prepare publish folder (root html + dist)
+        run: |
+          rm -rf site
+          mkdir -p site
+          cp *.html site/ || true
+          cp -R dist site/dist
+          if [ -d assets ]; then cp -R assets site/assets; fi
+          touch site/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-
+    needs: build
+    environment:
+      name: github-pages
     steps:
-      - name: Connect to Kintana Server and Deploy
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_KINTANA_HOST }}
-          username: ${{ secrets.SSH_KINTANA_USERNAME }}
-          password: ${{ secrets.SSH_KINTANA_PASSWORD }}
-          script: |
-            cd /home/kintanat/domains/write.kintana-technology.com/public_html
-            ./bash/deploy.sh
+      - uses: actions/deploy-pages@v4
